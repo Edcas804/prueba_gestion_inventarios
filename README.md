@@ -31,10 +31,18 @@ npm run dev
 npm run debug
 ```
 #### Migrations
+##### Create tables
 ```
-migrations:generate
-migrations:run
+nm run migrations:run
+```
+##### Rever Migrations
+
+```
 migrations:rever
+```
+##### New migrations
+```
+npm unmigrations:generate
 ```
 
 
