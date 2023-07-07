@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    [data-theme = "light"] {
+        --white-color: theme(colors.white);
+        --white-color-2: theme(colors.gray.200);
+        --dark-color: theme(colors.slate.900);
+        --dark-color-2: theme(colors.slate.500);
+        --white-bg: theme(colors.white);
+        --white-bg-2: theme(colors.gray.200);
+        --dark-bg: theme(colors.slate.800);
+        --dark-bg-2: theme(colors.slate.900);
+        --filter-color: none;
+    }
+}
+
+@layer components {
+    [data-theme = "dark"] {
+        --white-color: theme(colors.slate.800);
+        --white-color-2: theme(colors.slate.900);
+        --dark-color: theme(colors.gray.300);
+        --dark-color-2: theme(colors.gray.400);
+        --white-bg: linear-gradient(to right, #07080e, #080f19);
+        --white-bg-2: theme(colors.slate.900);
+        --dark-bg: theme(colors.white);
+        --dark-bg-2: theme(colors.gray.200);
+        --filter-color: invert(70%);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--white-bg);
+    color: var(--dark-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--white-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--white-bg-2);
+    border-radius: 6px;
+}
+
+.mainLogo {
+    filter: var(--filter-color);
+}
+
+.white-color {
+    color: var(--white-color);
+}
+
+.white-color-2 {
+    color: var(--white-color-2);
+}
+
+.dark-color {
+    color: var(--dark-color);
+}
+
+.dark-color-2 {
+    color: var(--dark-color-2);
+}
+
+.white-bg {
+    background: var(--white-bg);
+}
+
+.white-bg-2 {
+    background: var(--white-bg-2);
+}
+
+.dark-bg {
+    background: var(--dark-bg);
+}
+
+.dark-bg-2 {
+    background: var(--dark-bg-2);
+}
+/*
+Custom
+ */
+.MainLi > ul {
+    display: none
+}
+.MainLi:hover ul {
+    display: block;
+}
+
+form select, select {
+    color: var(--dark-color);
+    background: var(--white-bg);
+    @apply rounded-full px-5 py-1 border border-slate-300 mx-2;
+}
+form input {
+    color: var(--dark-color);
+    background: var(--white-bg);
+    @apply rounded-full px-5 py-1 border border-slate-300 my-3 w-full sm:w-5/6 focus:border-cyan-300;
+}
+form button, button {
+    @apply border-2 border-cyan-500 px-3 py-2 rounded-lg hover:bg-cyan-100 duration-200 min-w-[100px] font-bold text-cyan-500;
+}
+.showErrors {
+    @apply w-5/6 px-2 rounded-e text-red-700  relative bg-red-200 ;
+}
+.showErrors {
+}
+
+.showErrors:after {
+    content: '';
+    position: absolute;
+    top: -.5rem;
+    left: -1px;
+    background: rgba(255, 0, 0, .2);
+    width: 1.4rem;
+    height: 1rem;
+    display: block;
+    clip-path: polygon(50% 0, 100% 50%, 50% 50%, 0 50%);
+}

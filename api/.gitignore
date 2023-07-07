@@ -1,0 +1,7 @@
+.env
+node_modules/
+*.local
+postgres_data/
+
+# Editor directories and files
+.idea
