@@ -33,12 +33,12 @@ npm run debug
 #### Migrations
 ##### Create tables
 ```
-nm run migrations:run
+npm run migrations:run
 ```
 ##### Rever Migrations
 
 ```
-migrations:rever
+npm run migrations:rever
 ```
 ##### New migrations
 ```
